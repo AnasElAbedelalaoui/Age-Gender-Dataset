@@ -23,7 +23,7 @@ with open('mesurls.txt','w') as file :
         file.write(link + '\n')
 f=[]
 with open('mesurls.txt','r') as inf:
-    with open('data123.csv','w') as out: 
+    with open('age_gender_data.csv','w') as out: 
         for row in inf:
             url1=row.strip()
             response1=requests.get(url1)
@@ -53,7 +53,7 @@ with open('mesurls.txt','r') as inf:
                 image=PIL.Image.open("monimage.png")
                 details=image._getexif()
                 if details is not None:
-                    if len(details)>1:
+                    if len(details)>4:
                         date=details[36868]
                         print(date)
                     out.write(name+';'+age+';'+o+';'+url3+';'+date+'\n')
